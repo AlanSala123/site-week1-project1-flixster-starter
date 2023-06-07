@@ -95,6 +95,12 @@ function generateCards(movieObject) {
     averageContainer.appendChild(rating);
     document.body.appendChild(averageContainer);
 
+    //create Image
+    let image = document.createElement('img');
+    image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
+    document.body.insertBefore(image, averageContainer);
+
+
 
 }
 
