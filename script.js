@@ -74,3 +74,28 @@ let fakeData = {
 }
 //might need a for loop later on
 let firstMovie = fakeData.results[0];
+
+function generateCards(movieObject) {
+    //create star
+    let star = document.createElement('span');
+    star.classList.add('star');
+    let starContent = document.createTextNode('⭐️');
+    star.appendChild(starContent);
+
+    //create rating
+    let rating = document.createElement('span');
+    rating.classList.add('rating');
+    let ratingContent = document.createTextNode(movieObject.vote_average);
+    rating.appendChild(ratingContent);
+
+    //create average container
+    let averageContainer = document.createElement('div');
+    averageContainer.classList.add('average');
+    averageContainer.appendChild(star);
+    averageContainer.appendChild(rating);
+    document.body.appendChild(averageContainer);
+
+
+}
+
+generateCards(firstMovie);
