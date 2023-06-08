@@ -8,7 +8,12 @@
 }
 
 .entireContainer {
-    flex-wrap: row;
+    flex-direction: row;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#loadMore {
+    text-align: center;
 }

@@ -72,6 +72,18 @@ let fakeData = {
     "total_pages": 98,
     "total_results": 1951
 }
+//next thing I need to do is fetch the API
+const ApiKey = "d9293d6f881f33b3ce1e80d6af4508ea";
+const URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + ApiKey;
+
+async function ApiCall() {
+    const res = await fetch(URL);
+    const data = await res.json();
+    return data;
+}
+
+
+//grabbing the class in the HTML file
 const entireContainer = document.querySelector(".entireContainer")
 
 function generateCards(movieObject) {
@@ -112,12 +124,21 @@ function generateCards(movieObject) {
     movie.appendChild(averageContainer);
     movie.appendChild(title);
     entireContainer.appendChild(movie);
-    // entireContainer.appendChild(image);
-    // entireContainer.appendChild(averageContainer);
-    // entireContainer.appendChild(title);
 }
 
-//going through the movies and printing them all out
-for (i = 0; i < fakeData.results.length; i++) {
-    generateCards(fakeData.results[i]);
+async function generateAllCards() {
+    //going through the movies and printing them all out
+    let data = await ApiCall();
+    for (i = 0; i < 4; i++) {
+        generateCards(data.results[i]);
+    }
 }
+let button = document.querySelector('#button');
+button.addEventListener("click", generateAllCards);
+
+window.onload = async function () {
+    
+}
+
+//add pages
+
