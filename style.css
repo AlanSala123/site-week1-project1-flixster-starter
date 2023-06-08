@@ -2,3 +2,13 @@
     text-align: center;
     font-family: fantasy;
 }
+
+#Current_movies {
+    font-family: fantasy;
+}
+
+.entireContainer {
+    flex-wrap: row;
+    display: flex;
+    justify-content: space-between;
+}

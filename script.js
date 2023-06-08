@@ -72,8 +72,7 @@ let fakeData = {
     "total_pages": 98,
     "total_results": 1951
 }
-//might need a for loop later on
-let firstMovie = fakeData.results[0];
+const entireContainer = document.querySelector(".entireContainer")
 
 function generateCards(movieObject) {
     //create star
@@ -93,26 +92,32 @@ function generateCards(movieObject) {
     averageContainer.classList.add('average');
     averageContainer.appendChild(star);
     averageContainer.appendChild(rating);
-    document.body.appendChild(averageContainer);
+    // document.body.appendChild(averageContainer);
 
     //create Image
     let image = document.createElement('img');
     image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
-    document.body.insertBefore(image, averageContainer);
+    // document.body.insertBefore(image, averageContainer);
 
     //create the title
     let title = document.createElement('div');
     title.classList.add('title');
     title.innerText = movieObject.original_title;
-    document.body.insertBefore(title, averageContainer.nextSibling);
+    // document.body.insertBefore(title, averageContainer.nextSibling);
 
-    //create the entire section 
+    //create the entire section for a specific movie
     let movie = document.createElement('section');
     movie.classList.add('movie');
     movie.appendChild(image);
     movie.appendChild(averageContainer);
     movie.appendChild(title);
-    document.body.appendChild(movie);
+    entireContainer.appendChild(movie);
+    // entireContainer.appendChild(image);
+    // entireContainer.appendChild(averageContainer);
+    // entireContainer.appendChild(title);
 }
 
-generateCards(firstMovie);
+//going through the movies and printing them all out
+for (i = 0; i < fakeData.results.length; i++) {
+    generateCards(fakeData.results[i]);
+}
