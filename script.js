@@ -73,17 +73,14 @@ let fakeData = {
     "total_results": 1951
 }
 //TODO:
-//Create the Search in JS(THE MOST IMPORTANT FEATURE)
 //Clean up the code for README and add comments(in the morning before work)
 //record the video to submit the project
-//figure out how to embed the youtube trailers/pop ups for more information
-//add the other button
 
-//begin at page 1
 let curPage = 1;
 const ApiKey = 'd9293d6f881f33b3ce1e80d6af4508ea';
 let SearchBar = document.querySelector('#search-input');
 let searchString = '';
+let brokenImage = "https://static.vecteezy.com/system/resources/thumbnails/010/834/231/small/broken-chain-as-a-symbol-of-freedom-from-slavery-link-damage-vector.jpg";
 
 async function ApiCall() {
     const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
@@ -91,11 +88,12 @@ async function ApiCall() {
     const data = await res.json();
     const movies = data.results;
     movies.forEach(movie => {
-        if(movie !== null && movie !== undefined && movie.poster_path){
+       if (movie !== null && movie != undefined) {
             generateCards(movie);
-        }
+       }
     });
 }
+
 
 async function firstAPICall() {
     const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
@@ -103,9 +101,9 @@ async function firstAPICall() {
     const data = await res.json();
     const movies = data.results;
     movies.forEach(movie => {
-        if (movie !== null && movie !== undefined) {
+        if (movie !== null && movie != undefined) {
             generateCards(movie);
-        }
+       }
     });
 }
 
@@ -115,9 +113,9 @@ async function QueryCall() {
     const data = await res.json();
     const movies = data.results;
     movies.forEach(movie => {
-        if (movie !== null && movie !== undefined) {
+        if (movie !== null && movie != undefined) {
             generateCards(movie);
-        }
+       }
     });
 }
 
@@ -147,7 +145,12 @@ function generateCards(movieObject) {
     let image = document.createElement('img');
     image.classList.add('movie-poster');
     image.alt = "This is the movie " + movieObject.title;
-    image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
+    if (movieObject.poster_path) {
+        image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
+    } 
+    else {
+        image.src = brokenImage;
+    }
 
     //create the title
     let title = document.createElement('div');
@@ -172,7 +175,7 @@ button.addEventListener("click", () => {
     ApiCall();
 })
 
-//the search bar when we are adding the keys 
+//the search bar when we are adding the input inside of the search bar 
 SearchBar.addEventListener("input", (event) => {
     entireContainer.innerHTML = '';
     searchString = event.target.value;
