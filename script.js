@@ -73,13 +73,17 @@ let fakeData = {
     "total_results": 1951
 }
 //TODO:
-//Create the Search in JS
-//Clean up the code for README and add comments
-//record the video
-//figure out how to embed the youtube trailers
+//Create the Search in JS(THE MOST IMPORTANT FEATURE)
+//Clean up the code for README and add comments(in the morning before work)
+//record the video to submit the project
+//figure out how to embed the youtube trailers/pop ups for more information
+//add the other button
 
+//begin at page 1
 let curPage = 1;
 const ApiKey = 'd9293d6f881f33b3ce1e80d6af4508ea';
+let SearchBar = document.querySelector('#search-input');
+let searchString = '';
 
 async function ApiCall() {
     const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
@@ -105,6 +109,17 @@ async function firstAPICall() {
     });
 }
 
+async function QueryCall() {
+    const URL = `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=${ApiKey}`
+    const res = await fetch(URL);
+    const data = await res.json();
+    const movies = data.results;
+    movies.forEach(movie => {
+        if (movie !== null && movie !== undefined) {
+            generateCards(movie);
+        }
+    });
+}
 
 //grabbing the class in the HTML file
 const entireContainer = document.querySelector("#movies-grid")
@@ -149,10 +164,22 @@ function generateCards(movieObject) {
 }
 //make the first API call
 firstAPICall();
+
+//everytime the loadmore button is pressed add another page of movies
 let button = document.querySelector('.load-more-movies-btn');
 button.addEventListener("click", () => {
     curPage += 1;
     ApiCall();
+})
+
+//the search bar when we are adding the keys 
+SearchBar.addEventListener("input", (event) => {
+    entireContainer.innerHTML = '';
+    searchString = event.target.value;
+    if (event.target.value == '') {
+        firstAPICall();
+    }
+    QueryCall();
 })
 
 

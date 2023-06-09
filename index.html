@@ -9,13 +9,15 @@
 </head>
 <body>
     <!-- Top of the title -->
-    <h1 id="flix"> 🍿 Flixster </h1>
-
+    <span id="top-container">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_zpunhgdm.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>
+        <h1 id="flix"> Flixster </h1>
+    </span>
     <!-- Form that the user can search for specific movies -->
     <form id="form">
-        <label for="search">Search</label>
-        <input id="search-input" type="text" name="search" placeholder= "Search Here!"required/>
-        <button id="search-button" type="submit">Search</button>
+        <label for="search">Search Movies</label>
+        <input id="search-input" type="text" name="search" required/>
     </form>
    
     <!-- header before the current movies -->
@@ -24,6 +26,7 @@
     <!-- The grid that contains all the movies -->
     <div id="movies-grid"></div>
     
+    <!-- The load more button at the bottom of the screen -->
     <section id="loadMore">
     <button class="load-more-movies-btn"><span>Load More</span></button>
     </section>

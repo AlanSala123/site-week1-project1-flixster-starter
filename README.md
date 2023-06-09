@@ -1,10 +1,9 @@
-📝 **NOTE** Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
 
 ## Week 1 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **Alan Salazar**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **10** hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
@@ -50,7 +49,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I believe that the topics discussed in labs definitley helped prepare to complete the assignment in many ways!  
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
@@ -67,3 +66,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+A shout out that I want to give to some of my fellow peers that helped me is Marwan Kubir, Luis Bravo.  And also a shoutout to the instructors in my cohort A'shaun, Page, and Sammy they all really helped me with this project and I wouldn't be able to do it without them!
