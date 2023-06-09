@@ -72,19 +72,42 @@ let fakeData = {
     "total_pages": 98,
     "total_results": 1951
 }
-//next thing I need to do is fetch the API
-const ApiKey = "d9293d6f881f33b3ce1e80d6af4508ea";
-const URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + ApiKey;
+//TODO:
+//Create the Search in JS
+//Clean up the code for README and add comments
+//record the video
+//figure out how to embed the youtube trailers
+
+let curPage = 1;
+const ApiKey = 'd9293d6f881f33b3ce1e80d6af4508ea';
 
 async function ApiCall() {
+    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
     const res = await fetch(URL);
     const data = await res.json();
-    return data;
+    const movies = data.results;
+    movies.forEach(movie => {
+        if(movie !== null && movie !== undefined && movie.poster_path){
+            generateCards(movie);
+        }
+    });
+}
+
+async function firstAPICall() {
+    const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
+    const res = await fetch(URL);
+    const data = await res.json();
+    const movies = data.results;
+    movies.forEach(movie => {
+        if (movie !== null && movie !== undefined) {
+            generateCards(movie);
+        }
+    });
 }
 
 
 //grabbing the class in the HTML file
-const entireContainer = document.querySelector(".entireContainer")
+const entireContainer = document.querySelector("#movies-grid")
 
 function generateCards(movieObject) {
     //create star
@@ -95,7 +118,7 @@ function generateCards(movieObject) {
 
     //create rating
     let rating = document.createElement('span');
-    rating.classList.add('rating');
+    rating.classList.add('movie-votes');
     let ratingContent = document.createTextNode(movieObject.vote_average);
     rating.appendChild(ratingContent);
 
@@ -104,41 +127,32 @@ function generateCards(movieObject) {
     averageContainer.classList.add('average');
     averageContainer.appendChild(star);
     averageContainer.appendChild(rating);
-    // document.body.appendChild(averageContainer);
 
     //create Image
     let image = document.createElement('img');
+    image.classList.add('movie-poster');
+    image.alt = "This is the movie " + movieObject.title;
     image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
-    // document.body.insertBefore(image, averageContainer);
 
     //create the title
     let title = document.createElement('div');
-    title.classList.add('title');
+    title.classList.add('movie-title');
     title.innerText = movieObject.original_title;
-    // document.body.insertBefore(title, averageContainer.nextSibling);
 
     //create the entire section for a specific movie
     let movie = document.createElement('section');
-    movie.classList.add('movie');
+    movie.classList.add('movie-card');
     movie.appendChild(image);
     movie.appendChild(averageContainer);
     movie.appendChild(title);
     entireContainer.appendChild(movie);
 }
+//make the first API call
+firstAPICall();
+let button = document.querySelector('.load-more-movies-btn');
+button.addEventListener("click", () => {
+    curPage += 1;
+    ApiCall();
+})
 
-async function generateAllCards() {
-    //going through the movies and printing them all out
-    let data = await ApiCall();
-    for (i = 0; i < 4; i++) {
-        generateCards(data.results[i]);
-    }
-}
-let button = document.querySelector('#button');
-button.addEventListener("click", generateAllCards);
-
-window.onload = async function () {
-    
-}
-
-//add pages
 

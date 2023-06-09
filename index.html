@@ -8,16 +8,26 @@
     <title>Flixster</title>
 </head>
 <body>
-    <h1 id="flix">
-        🍿 Flixster
-    </h1>
-    <h1 id="Current_movies">
-        Current Movies 🎬
-    </h1>
-    <div class="entireContainer"></div>
+    <!-- Top of the title -->
+    <h1 id="flix"> 🍿 Flixster </h1>
+
+    <!-- Form that the user can search for specific movies -->
+    <form id="form">
+        <label for="search">Search</label>
+        <input id="search-input" type="text" name="search" placeholder= "Search Here!"required/>
+        <button id="search-button" type="submit">Search</button>
+    </form>
+   
+    <!-- header before the current movies -->
+    <h1 id="Current_movies"> Current Movies 🎬 </h1>
+    
+    <!-- The grid that contains all the movies -->
+    <div id="movies-grid"></div>
+    
     <section id="loadMore">
-    <button id="button">Load More</button>
+    <button class="load-more-movies-btn"><span>Load More</span></button>
     </section>
+
 </body>
 <script src="script.js"></script>
 </html>
