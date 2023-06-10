@@ -43,7 +43,9 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+`<a href="https://www.loom.com/share/6b30c20443b54160887948f51b83606b">
+    <img style="max-width:300px;" src="https://cdn.loom.com/placeholders/private-video.gif">
+  </a>`
 
 ### Reflection
 
@@ -62,6 +64,7 @@ Add your response here
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
+https://lottiefiles.com/ I used lotte files for the popcorn animation next to my flixster title!
 
 ### Shout out
 
