@@ -41,7 +41,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video or gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+ Add the embedded URL code to your animated app walkthrough below. Make sure the video or gif actually renders and animates when viewing this README.
 
   <a href="https://www.loom.com/share/d350f69ad7fe4776a4a531d60b0018bb">
     <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d350f69ad7fe4776a4a531d60b0018bb-with-play.gif">
@@ -51,15 +51,15 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-I believe that the topics discussed in labs definitley helped prepare to complete the assignment in many ways!  
+I believe that the topics discussed in labs definitley helped prepare to complete the assignment in many ways! A specific example of a lab that really helped with the project is actually the Giphy lab, because it was in a similar format to the project becuase we were fetching gifs and putting them in a grid format, pretty similar to the project in which we are fetching the movies and putting them in a grid.  Additionally, the lab really helped with the concepts because I had no experience with API's before this experience so being able to practice with the fetching in the lab was really helpful! I feel like just about all the features were discussed in the lab, so I didn't ever really feel unprepared during the assignment!
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time something I would've really wanted to try is to add a pop up to all the movies in the Flixster.  Additionally, another feature I think would be really cool to add is whenever you click on a movie, you can watch the trailer on the screen.  I will definititely try adding these features on my free time because I am so interested to see how the flixster website can develop!
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I believe the project demo was really helpful! Some things that went super well is that it was awesome seeing people put their own spin on the project, and although we had the same project, it felt refreshing getting to see others do the project in their own light! I believe that just about everything went to plan, it was pretty cool getting to give feedback to my fellow peers and get different point of views on the project.  Something I noticed that I would love to try next time is that I noticed some of my peers had a border around their movies, and I think incorporating something similar would be awesome!  Furthermore, getting to add a light/dark mode button would be awesome to add for next time!
 
 ### Open-source libraries used
 
