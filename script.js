@@ -94,7 +94,6 @@ async function ApiCall() {
     });
 }
 
-
 async function firstAPICall() {
     const URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&page=${curPage}`
     const res = await fetch(URL);
@@ -119,7 +118,7 @@ async function QueryCall() {
     });
 }
 
-//grabbing the class in the HTML file
+//grabbing the grid in the HTML file
 const entireContainer = document.querySelector("#movies-grid")
 
 function generateCards(movieObject) {
@@ -145,6 +144,7 @@ function generateCards(movieObject) {
     let image = document.createElement('img');
     image.classList.add('movie-poster');
     image.alt = "This is the movie " + movieObject.title;
+    //if there is no poster then we will just use the image from google
     if (movieObject.poster_path) {
         image.src = "https://image.tmdb.org/t/p/w342" + movieObject.poster_path;
     } 
